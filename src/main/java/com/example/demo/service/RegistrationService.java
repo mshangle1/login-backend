@@ -12,7 +12,7 @@ public class RegistrationService {
 
     private final AppUserService appUserService;
 
-    public String register(RegistrationRequest request) {
+    public String register(RegistrationRequest request, AppUserRole role) {
 
         appUserService.signUpUser(
                 new AppUser(
@@ -20,7 +20,7 @@ public class RegistrationService {
                         request.getLastName(),
                         request.getEmail(),
                         request.getPassword(),
-                        AppUserRole.USER
+                        role
                 )
         );
 
