@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(path = "/api/v1/test/user")
-@PreAuthorize("hasRole('ROLE_USER')")
 public class TestUserController {
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @GetMapping
     public String test() {
         return "User Login successful";
